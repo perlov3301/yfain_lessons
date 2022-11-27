@@ -12,7 +12,7 @@ public class Lesson1 {
         Car car2 = new Car();
         instances.add("car2");
         car1.color = "blue";
-        car1.color = "red";
+        car2.color = "red";
         System.out.println("these cars have painted " + instances);
         System.out.println("the color of the car1 is " + car1.color);
         System.out.println("the color of the car2 is " + car2.color);
