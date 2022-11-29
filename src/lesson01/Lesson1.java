@@ -18,6 +18,19 @@ public class Lesson1 {
         System.out.println("the color of the car2 is " + car2.color);
         car1.startEngine("car1");
         car2.startEngine("car2");
+        
+        JamesBondCar car3 = new JamesBondCar("Honda");
+        car3.color = "black";
+        car3.numberOfDoors = 4;
+        car3.mycar();
+        
+        final double grossIncome = 60000;
+        Tax t = new Tax(grossIncome);
+        t.dependents = 2;
+        t.state = "NJ";
+        double yourTax = t.calcTax();
+        System.out.println("your tax is " + yourTax);
+        
 	}
 
 }
