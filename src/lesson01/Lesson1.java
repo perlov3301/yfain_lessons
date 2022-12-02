@@ -24,13 +24,20 @@ public class Lesson1 {
         car3.numberOfDoors = 4;
         car3.mycar();
         
-        final double grossIncome = 60000;
+        double grossIncome = 80000;
         Tax t = new Tax(grossIncome);
         t.dependents = 2;
         t.state = "NJ";
         double yourTax = t.calcTax();
-        System.out.println("your tax is " + yourTax);
+        System.out.println("your tax in NJ is " + yourTax);
         
+        // grossIncome = 40000;
+        NJTax tnj = new NJTax(grossIncome);
+        tnj.dependents = 0;
+        tnj.state = "NJ";
+        yourTax = tnj.calcTax();
+        double totalTax = tnj.adjustedForStudents(yourTax);
+        System.out.println("your Tax as student in NJ is " + totalTax);
 	}
 
 }
