@@ -5,11 +5,13 @@ public class Tax {
   double tax;
   String state;
   int dependents;
-  Tax(double v) {
+  Tax(double v, String str, int dep) {
 	  grossIncome = v;
+	  state = str;
+	  dependents = dep;
   }
   public double calcTax() {
-	  if (grossIncome<50001) {
+	  if (grossIncome<=50000) {
 		  tax = 0.06 * grossIncome;
 	  } 
 	  else {

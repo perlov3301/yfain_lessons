@@ -1,6 +1,5 @@
 package lesson01;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Lesson1 {
 
@@ -24,19 +23,19 @@ public class Lesson1 {
         car3.numberOfDoors = 4;
         car3.mycar();
         
-        double grossIncome = 80000;
-        Tax t = new Tax(grossIncome);
-        t.dependents = 2;
-        t.state = "NJ";
+        double grossIncome = 50000;
+        String state = "CA";
+        int dependents = 2;
+        Tax t = new Tax(grossIncome, state, dependents);
+     
         double yourTax = t.calcTax();
-        System.out.println("your tax in NJ is " + yourTax);
+        System.out.println("your tax in CA is " + yourTax);
         
-        // grossIncome = 40000;
-        NJTax tnj = new NJTax(grossIncome);
-        tnj.dependents = 0;
-        tnj.state = "NJ";
+        NJTax tnj = new NJTax(grossIncome, "NJ", 0);
+  
         yourTax = tnj.calcTax();
         double totalTax = tnj.adjustedForStudents(yourTax);
+        System.out.println("you Tax in NJ is " + yourTax);
         System.out.println("your Tax as student in NJ is " + totalTax);
 	}
 
