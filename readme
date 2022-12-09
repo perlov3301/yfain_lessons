@@ -6,8 +6,7 @@ git branch -M main
 git remote add origin https://github.com/perlov3301/yfain_lessons.git
 git push -u origin main
 
-I found the location... turns out that youtube stores downloads as BLOB files, so it's not like an .mp4 on your drive that you can just use for anything, which I guess makes sense, unfortunately.
-
-But the location is dependent on which browser you're using. For example, on Windows using Brave browser, it's in: %localappdata%\BraveSoftware\Brave-Browser\User Data\Default\IndexedDB
-
-And the actual folder will be called something like: https_www.youtube.com_0.indexeddb.blob
+In cmd run without compilation with classpath . // present folder
+java -cp . Hello.java Alexander
+Or delete package name from head of main file and
+javac Hello.java-> java Hello

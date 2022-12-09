@@ -61,6 +61,15 @@ public class Loops {
 			i++; } while (i < vlist.size());
 		endTime = Calendar.getInstance().getTimeInMillis();
 		System.out.println("do while loop: " + vdiff + " mls");
+		i = 0;
+		System.out.print("I love ");
+		while (i<totalElements) {
+			if (friends[i] == null) {
+				i++;
+				continue;}
+			System.out.print(friends[i] + " ");
+			i++;
+		}
 	}
 
 }

@@ -30,7 +30,8 @@ public class Primitives {
 	      ArrayList myNumbers = new ArrayList();
 	      myNumbers.add(6);
 	      myNumbers.add(7);
-	      System.out.println("at second position item is " + myNumbers.get(1));
+	      System.out.println("at second position item is " +
+	         myNumbers.get(1));
 	      
 	}
 
