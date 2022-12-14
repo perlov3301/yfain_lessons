@@ -4,8 +4,9 @@ public class Employee extends Person
      implements Payable,Promotionable {
   String first;
   String last;
-  Employee(String vf, String vl) {
-	  super(vf, vl);
+  String name;
+  Employee(String name) {
+	  super(name);
   }
   @Override
   public boolean increasePay(int percent) {
@@ -14,6 +15,9 @@ public class Employee extends Person
   void mdata () {
 	  System.out.println("Employee's data: " +
         first + " " + last);
+  }
+  public String getName() {
+	   return (" Employee's name is " + name);
   }
   
 }

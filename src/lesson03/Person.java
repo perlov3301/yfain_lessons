@@ -3,12 +3,15 @@ package lesson03;
 public class Person {
    String first;
    String last;
-   Person(String vf, String vl){
-	   first = vf;
-	   last = vl;
+   String name;
+   Person(String name){
+	  this.name = name;
    }
    void mdata() {
 	   System.out.println(" person's data: " +
          first + " " + last);
+   }
+   public String getName() {
+	   return (" person's name is " + name);
    }
 }
