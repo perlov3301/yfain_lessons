@@ -27,21 +27,22 @@ public class Lesson03 {
       
       Person workers[] = new Person [100];
       
-      workers[0] = new Employee("Yakov", "Fain");
-      workers[1] = new Employee("Mary", "Lou");
-      workers[2] = new Contractor("Bill", "Shaw");
+      workers[0] = new Employee("Yakov Fain");
+      workers[1] = new Employee("Mary Lou");
+      workers[2] = new Contractor("Bill Shaw");
       System.out.println("types;"+
     		" workers[0]:" + workers[0].getClass().getName() 
     		);
-      // populate the array workers here ..
-      for (int i1=0; i1<100; i1++) {
-    	  Employee currentEmployee;
-    	  Contractor currentContractor;
-    	  // downcasting
-    	  if (workers[i1]  instanceof Employee) {
-    		  currentEmployee = (Employee) workers[i1];
-    	  } else if (workers[i1] instanceof Contractor) {
-    		  currentContractor = (Contractor) workers[i1];
+      // populate the array workers here while downcasting
+      Employee currentEmployee;
+	  Contractor currentContractor;
+      for (Person p: workers) {
+    	  if (p instanceof Employee) {
+    		  currentEmployee = (Employee) p;
+    		  currentEmployee.increasePay(30);
+    	  } else if (p instanceof Contractor) {
+    		  currentContractor = (Contractor) p;
+    		  currentContractor.increasePay(30);
     	  }
       }
       

@@ -3,7 +3,7 @@ package lesson03;
 public class Contractor extends Person implements Payable {
 	 String first;
 	  String last;
-	  String name;
+//	  String name;
 	  Contractor(String name) {
 		  super(name);
 	  }
@@ -11,11 +11,17 @@ public class Contractor extends Person implements Payable {
 		  System.out.println("Contractor's data: " +
 	        first + " " + last);
 	  }
-	  public String getName() {
-		   return (" Contractor's name is " + name);
-	   }
-	@Override
+	
 	public boolean increasePay(int percent) {
-		return true;
+		if(percent < Payable.INCREASE_CAP)   {
+			System.out.println("Increasing hourly rate by " +
+		percent + "%. " + getName());
+			return true;
+		} else {
+			System.out.println("Sorry, can't increase hourly rate" +
+		    " more than " + Payable.INCREASE_CAP);
+			return false;
+		}
+//		return true;
 	}
 }

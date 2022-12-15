@@ -1,23 +1,22 @@
 package lesson03;
 
 public class Employee extends Person 
-     implements Payable,Promotionable {
+     implements Payable {
   String first;
   String last;
-  String name;
+//  String name;
   Employee(String name) {
 	  super(name);
   }
-  @Override
+  
   public boolean increasePay(int percent) {
+	  System.out.println("increasing salary by " + percent +
+			  "% " + getName());
 	  return true;
   }
   void mdata () {
 	  System.out.println("Employee's data: " +
         first + " " + last);
-  }
-  public String getName() {
-	   return (" Employee's name is " + name);
   }
   
 }
