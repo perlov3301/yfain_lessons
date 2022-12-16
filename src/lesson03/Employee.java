@@ -18,5 +18,7 @@ public class Employee extends Person
 	  System.out.println("Employee's data: " +
         first + " " + last);
   }
-  
+  public void addPensionPlan() {
+	  System.out.println("adding pension plan for " + getName());
+  }
 }

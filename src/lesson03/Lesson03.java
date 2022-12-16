@@ -26,7 +26,6 @@ public class Lesson03 {
     		" cnjt3:" + vinstance(cnjt3));
       
       Person workers[] = new Person [100];
-      
       workers[0] = new Employee("Yakov Fain");
       workers[1] = new Employee("Mary Lou");
       workers[2] = new Contractor("Bill Shaw");
@@ -40,6 +39,7 @@ public class Lesson03 {
     	  if (p instanceof Employee) {
     		  currentEmployee = (Employee) p;
     		  currentEmployee.increasePay(30);
+    		  currentEmployee.addPensionPlan();
     	  } else if (p instanceof Contractor) {
     		  currentContractor = (Contractor) p;
     		  currentContractor.increasePay(30);
