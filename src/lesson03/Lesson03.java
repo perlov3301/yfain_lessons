@@ -45,6 +45,30 @@ public class Lesson03 {
     		  currentContractor.increasePay(30);
     	  }
       }
+      PersonA workersA[] = new PersonA[3];
+      
+      workersA[0] = new EmployeeA("John");
+      workersA[1] = new ContractorA("Mary");
+      workersA[2] = new EmployeeA("Steve");
+      for (PersonA p: workersA) {
+    	  p.promote(30);
+    	  p.increasePay(30);
+      }
+      Payable workersI[] = new Payable[3];
+      
+      workersI[0] = new EmployeeI("John");
+      workersI[1] = new ContractorI("Mary");
+      workersI[2] = new EmployeeI("Steve");
+      for (Payable p: workersI) {
+    	  p.increasePay(30);
+      }
+      Human humans[] = new Human[2];
+      humans[0] = new Woman("Marina", true);
+      humans[1] = new Man("Alex", true);
+      for(Human h: humans) {
+    	  h.name();
+    	  h.israel();
+      }
       
 	}
 
