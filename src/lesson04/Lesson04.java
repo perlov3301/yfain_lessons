@@ -1,21 +1,21 @@
 package lesson04;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.FlowLayout;
 
 public class Lesson04 extends JFrame  {
 	public Lesson04() {
 		setSize(250, 300);
-		setTitle("Hello World");
-//		JButton myButton = new JButton("Click me");
-//        add(myButton);
+		setTitle("Lesson04");
+		JButton myButton = new JButton("Click me");
+        add(myButton);
 		setVisible(true);
 	}
 	public static void main (String[] args) {
 		System.out.println("Hello World from lesson04");
 
-		Lesson04 myHello = new Lesson04();
-		JButton myB1 = new JButton("click here");
-		myHello.add(myB1);
+//		.Lesson04 myHello = new Lesson04();
+        Cflow csc = new Cflow();
+        csc.mcalculator();
 	}
 
 }
