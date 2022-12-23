@@ -16,6 +16,7 @@ public class Lesson04 extends JFrame  {
 //		.Lesson04 myHello = new Lesson04();
         Cflow csc = new Cflow();
         csc.mcalculator();
+        Cgrid cgr = new Cgrid();
 	}
 
 }
