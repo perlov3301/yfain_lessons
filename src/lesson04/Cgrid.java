@@ -1,8 +1,9 @@
 package lesson04;
-import java.awt.*;
+import java.awt.GridLayout;
 import javax.swing.*;
 
 public class Cgrid {
+	RoundBtn vbtnR = new RoundBtn(10);
    Cgrid() {
 	   System.out.println("Cgrid class");
 	// 1.create a panel
@@ -19,6 +20,8 @@ public class Cgrid {
    	JLabel label3 = new JLabel("   Sum:");
    	JTextField result = new JTextField(10);
    	JButton go = new JButton("Add");
+   	//go.setBounds(60,80,100,30);
+   	go.setBorder(new RoundBtn(10));
    	// 4. Add controls to the panel
    	windowContent.add(label1);
    	windowContent.add(field1);

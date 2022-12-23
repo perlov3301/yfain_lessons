@@ -13,10 +13,12 @@ public class Lesson04 extends JFrame  {
 	public static void main (String[] args) {
 		System.out.println("Hello World from lesson04");
 
-//		.Lesson04 myHello = new Lesson04();
+//		Lesson04 myHello = new Lesson04();
         Cflow csc = new Cflow();
         csc.mcalculator();
-        Cgrid cgr = new Cgrid();
+        new Cgrid();
+        new CgridKeys();
+        new CborderDemo();
 	}
 
 }
