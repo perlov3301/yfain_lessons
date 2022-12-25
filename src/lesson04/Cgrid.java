@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Cgrid {
 	RoundBtn vbtnR = new RoundBtn(10);
    Cgrid() {
-	   System.out.println("Cgrid class");
+	   System.out.println("Cgrid jframe");
 	// 1.create a panel
        JPanel windowContent = new JPanel();
    	// 2. set  a layout manager for this panel

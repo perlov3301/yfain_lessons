@@ -4,7 +4,7 @@ import java.awt.FlowLayout;
 
 public class Cflow {
     Cflow() {
-    	System.out.println("flowlayout Calculator Class");
+    	System.out.println("flowlayout fields Class");
     }
     void mcalculator() {
     	// 1.create a panel

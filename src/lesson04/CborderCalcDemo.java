@@ -1,9 +1,14 @@
 package lesson04;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
 
-public class CborderDemo  {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class CborderCalcDemo {
 	static boolean RIGHT_TO_LEFT = false;
 	static void addComponentsToPane(Container pane) {
 		if (!(pane.getLayout() instanceof BorderLayout)) {
@@ -13,35 +18,23 @@ public class CborderDemo  {
 			pane.setComponentOrientation(
 				java.awt.ComponentOrientation.RIGHT_TO_LEFT);
 		}
-		JButton button = new JButton("Button 1 (Page_START");
-		pane.add(button, BorderLayout.PAGE_START);
-		//Make the center component big
-		button = new JButton("Button 2 (CENTER)");
-		button.setPreferredSize(new Dimension(200, 100));
-		pane.add(button, BorderLayout.CENTER);
+		pane.add(new CgridFieldsPanel(), BorderLayout.NORTH);
+		pane.add(new CgridKeysPanel(), BorderLayout.CENTER);
 		
-		button = new JButton("Button 3 (Line_START)");
-		pane.add(button, BorderLayout.LINE_START);
-		
-		button = new JButton("Long-Named Button 4 (PAGE_END)");
-		pane.add(button, BorderLayout.PAGE_END);
-		
-		button = new JButton("5 (LINE_END)");
-		pane.add(button, BorderLayout.LINE_END);
-		// create GUI. For safety, this method should be 
-		// invoked from the event dispatch thread
 	}
 	private static void createAndShowGUI() {
 		// create and set up the window
-		JFrame frame = new JFrame("BorderLayoutDemo");
+		JFrame frame = new JFrame("BorderLayout Calc Demo");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// set up the content pane
 		addComponentsToPane(frame.getContentPane());
 		//use the content pane's default BorderLayout
 		frame.pack();
+		 frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
-	CborderDemo() {
+	CborderCalcDemo() {
+		System.out.println("CborderCalcDemo frame");
 	   // schedule a job for the event dispatch trhread:
 	   // creating and showing this app's GUI
 		javax.swing.SwingUtilities.invokeLater(
