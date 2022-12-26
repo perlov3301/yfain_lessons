@@ -13,27 +13,22 @@ public class CgridBagPanel extends JPanel  {
 		System.out.println("CgridBagContstraints jpanel");
 		GridBagLayout gb = new GridBagLayout();
 		this.setLayout(gb);
-		
+		// create an instance of the GridBagConstraints and repeat
+		// this line for each component that you'd like to add 
 		GridBagConstraints constr = new GridBagConstraints();
-		// prepare set constraints for displyField
+		// prepare set of constraints for displyField
 		constr.gridx=0;// x number(coordinate) of the cell
 		constr.gridy=0;// y number of the cell
-		// this cell has the same height height as others
-		constr.gridheight = 1;
-		// this cell is as wide as 6 others
-		constr.gridwidth = 6;
+		constr.gridheight = 1;// the same height height as others
+		constr.gridwidth = 6;// is as wide as 6 others
 		// fill all space in the cell
-		constr.fill = constr.BOTH;
-		// proportion of horizontal space taken by the component
-		constr.weightx = 1.0;
-		// proportion of vertical space taken by the component
-		constr.weighty = 1.0;
-		// position of the component within the cell
-		constr.anchor = constr.CENTER;
+		constr.fill = constr.BOTH;// fill all space within
+		constr.weightx = 1.0;// proportion of horizontal space 
+		constr.weighty = 1.0;// proportion of vertical space
+		constr.anchor = constr.CENTER;//position within the cell
 		
 		JTextField displayField = new JTextField();
-		//set constraints for textField=assign
-		gb.setConstraints(displayField,constr);
+		gb.setConstraints(displayField,constr);	//assign set constraints 
 		this.add(displayField);
 	}
 
