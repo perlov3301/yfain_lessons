@@ -7,9 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class CgridBagPanel extends JPanel  {
+public class CgridBagPanelField extends JPanel  {
 	
-	CgridBagPanel(){
+	CgridBagPanelField(){
 		System.out.println("CgridBagContstraints jpanel");
 		GridBagLayout gb = new GridBagLayout();
 		this.setLayout(gb);

@@ -20,6 +20,8 @@ public class CgridKeysPanel extends JPanel {
 	   JButton n8 = new JButton("  8  ");
 	   JButton n9 = new JButton("  9  ");
 	   JButton n0 = new JButton("  0  ");
+	   JButton p = new JButton("  .  ");
+	   JButton eq = new JButton("  =  ");
 	   
 	   this.add(n1);
 	   this.add(n2);
@@ -31,5 +33,7 @@ public class CgridKeysPanel extends JPanel {
 	   this.add(n8);
 	   this.add(n9);
 	   this.add(n0);
+	   this.add(p);
+	   this.add(eq);
   }
 }
