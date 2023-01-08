@@ -1,34 +1,59 @@
 package lesson04;
 
-import java.awt.Frame;
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JFrame;
+import java.awt.*;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
 
 public class CbuttonListener {
-	ClistenerEngine calcEngine;;
-	
-   JButton button0 = new JButton("button0");
-   JButton button1 = new JButton("button1");
-   JButton button2 = new JButton("button2");
+   JFrame frame;
+   JPanel windowContent;
+   JButton button0 ;
+   JButton button1;
+   JButton button2;
+   JButton button3;
+   JLabel label;
+   JTextField field;
+   CbuttonListenerEngine buttonEngine;
+   void createAndShowGUI(String str) {
+	   frame = new JFrame(str);
+	   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	   frame.setContentPane(windowContent);
+	   frame.pack();
+	   frame.setVisible(true);
+   }
+   JButton createB(String s) {
+	   JButton jb = new JButton(s);
+	   jb.addActionListener(buttonEngine);
+	   jb.setAlignmentX(windowContent.CENTER_ALIGNMENT);
+//	   windowContent.add(jb);
+	   return jb;
+   }
    CbuttonListener(){
 	   System.out.println("CbuttonListener");
-	   calcEngine = new ClistenerEngine(this);
-	   JPanel windowContent = new JPanel();
-		GridLayout gl = new GridLayout(3,1);
-	    windowContent.setLayout(gl);
-	    windowContent.add(button0);
-	    windowContent.add(button1);
-	    windowContent.add(button2);
-	   button0.addActionListener(calcEngine);
-	   button1.addActionListener(calcEngine);
-	   button2.addActionListener(calcEngine);
+	   windowContent = new JPanel();
+		BoxLayout boxl = new BoxLayout(windowContent, BoxLayout.Y_AXIS);
+	    windowContent.setLayout(boxl);
+	    buttonEngine = new CbuttonListenerEngine(this); 
+	    
+	    windowContent.add(createB("button0"));
+	    windowContent.add(createB("button1"));
+	    windowContent.add(createB("button2"));
+	    windowContent.add(createB("button3"));
 
-	   JFrame frame = new JFrame("test of  buttonActionListener");
-	   frame.setContentPane(windowContent);
-	   frame.setSize(300, 300);
-	   frame.setVisible(true);
+	    label = new JLabel("label");
+//	    label.setBounds(100, 100, 100, 20);
+	    windowContent.add(label);
+	    
+	    field = new JTextField("field");
+	    // field.setBounds(100, 100, 100, 100);
+	    // field.setBounds(Rectangle);
+	    windowContent.add(field);
+	   javax.swing.SwingUtilities.invokeLater(new Runnable() {
+		   public void run() {
+			   createAndShowGUI("buttonActionListener");
+		   }
+	   });
    }
    
    

@@ -22,8 +22,10 @@ import javax.swing.JTextField;
 		// get the button's Label
 		String clickedButtonLabel = clickButton.getText();
 		//add the button's Label to existing Text
-		parent.setDisplayValue(dispFieldText+clickedButtonLabel);
-		
+		String vset = dispFieldText + clickedButtonLabel;
+		parent.setDisplayValue(vset);
+		System.out.println("recent:"+dispFieldText +
+				"+click:"+clickedButtonLabel+" ="+vset);
 //		JOptionPane.showConfirmDialog(null, 
 //			"You pressed " + clickedButtonLabel,
 //			"Just a test ", JOptionPane.PLAIN_MESSAGE);

@@ -20,7 +20,8 @@ public class CgridKeys {
 	   JButton n8 = new JButton("  8  ");
 	   JButton n9 = new JButton("  9  ");
 	   JButton n0 = new JButton("  0  ");
-	   
+	   JButton point = new JButton(" . ");
+	   JButton equ = new JButton(" = ");
 	   windowContent.add(n1);
 	   windowContent.add(n2);
 	   windowContent.add(n3);
@@ -31,8 +32,9 @@ public class CgridKeys {
 	   windowContent.add(n8);
 	   windowContent.add(n9);
 	   windowContent.add(n0);
-
-	   JFrame frame = new JFrame("gridLayout of Keys");
+       windowContent.add(point);
+       windowContent.add(equ);
+	   JFrame frame = new JFrame("gridKeys");
 	   frame.setContentPane(windowContent);
 	   frame.setSize(400, 260);
 	   frame.setVisible(true);

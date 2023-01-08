@@ -22,10 +22,12 @@ public class Lesson04 extends JFrame  {
         new CborderCalc();
         new CborderCalcDemo();
         new CcardJavapoint();
-        new CbuttonListener();
-        new CfieldListener();
+        //new CbuttonListener();
+        // new CfieldListener();
         new SimpleCalculatorGrid();
         new Calculator();
+        new CbuttonListener();
+        new CfieldListener();
 	}
 
 }
