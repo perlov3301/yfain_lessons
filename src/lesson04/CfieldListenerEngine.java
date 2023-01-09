@@ -21,6 +21,6 @@ public class CfieldListenerEngine implements ActionListener {
 			// add to existing Text
 			String vset = fieldText + buttonLabel;
 			parent.setDisplayValue1(vset);
-			System.out.println("recent:"+fieldText+"click:"+buttonLabel+"="+ vset);
+			System.out.println("recent:"+fieldText+" click:"+buttonLabel+"="+ vset);
 		}
 }
