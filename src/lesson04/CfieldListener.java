@@ -19,7 +19,7 @@ public class CfieldListener {
 	   frame.setVisible(true);
    }
    public String getDisplayValue1(){
-	   String fieldvalue = field.getText();
+	  String fieldvalue = field.getText();
 	  return fieldvalue; 
    }
    

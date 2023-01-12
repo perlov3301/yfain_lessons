@@ -1,6 +1,5 @@
 package lesson04;
 import javax.swing.*;
-import java.awt.FlowLayout;
 
 public class Lesson04 extends JFrame  {
 	public Lesson04() {
@@ -28,6 +27,7 @@ public class Lesson04 extends JFrame  {
         new Calculator();
         new CbuttonListener();
         new CfieldListener();
+        new CboxListener();
 	}
 
 }
