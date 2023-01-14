@@ -14,20 +14,21 @@ public class Lesson04 extends JFrame  {
 
 //		Lesson04 myHello = new Lesson04();
         Cflow csc = new Cflow();
-        csc.mcalculator();
-        new Cgrid();
-        new CgridKeys();
-        new CborderDemoContainer();
-        new CborderCalc();
-        new CborderCalcDemo();
-        new CcardJavapoint();
-        //new CbuttonListener();
-        // new CfieldListener();
-        new SimpleCalculatorGrid();
-        new Calculator();
-        new CbuttonListener();
-        new CfieldListener();
-        new CboxListener();
+ //       csc.mcalculator();
+//        new Cgrid();
+//        new CgridKeys();
+//        new CborderDemoContainer();
+//        new CborderCalc();
+//        new CborderCalcDemo();
+//        new CcardJavapoint();
+//        new SimpleCalculatorGrid();
+//        new Calculator();
+//        new CbuttonListener();
+//        new CfieldListener();
+//        new CboxListener();
+//        new CgridbagDemo();
+        new CgridbagDemoCustom();
+        new CgridbagListener();
 	}
 
 }

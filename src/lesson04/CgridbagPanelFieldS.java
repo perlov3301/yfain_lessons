@@ -24,7 +24,7 @@ public class CgridbagPanelFieldS extends JPanel {
 		// prepare set of constraints for displyField
 		constr.gridx=0;// x number(coordinate) of the cell
 		constr.gridy=0;// y number of the cell
-		constr.gridheight = 1;// the same height height as others
+		constr.gridheight = 1;// the same height as height of others
 		constr.gridwidth = 6;// is as wide as 6 others
 		// fill all space in the cell
 		constr.fill = constr.BOTH;// fill all space within
