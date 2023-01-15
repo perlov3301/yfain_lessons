@@ -13,7 +13,7 @@ public class Lesson04 extends JFrame  {
 		System.out.println("Hello World from lesson04");
 
 //		Lesson04 myHello = new Lesson04();
-        Cflow csc = new Cflow();
+ //       Cflow csc = new Cflow();
  //       csc.mcalculator();
 //        new Cgrid();
 //        new CgridKeys();
@@ -25,10 +25,10 @@ public class Lesson04 extends JFrame  {
 //        new Calculator();
 //        new CbuttonListener();
 //        new CfieldListener();
-//        new CboxListener();
+          new CboxListener();
 //        new CgridbagDemo();
         new CgridbagDemoCustom();
-        new CgridbagListener();
+       // new CgridbagListener();
 	}
 
 }

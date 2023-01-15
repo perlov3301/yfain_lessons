@@ -14,7 +14,7 @@ public class CboxListener {
 	   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   frame.setContentPane(windowContent);
 	   frame.pack();
-	   frame.setLocationRelativeTo(null);
+	 //  frame.setLocationRelativeTo(null);
 	   frame.setVisible(true);
    }
    public String getDisplayValue1() {
