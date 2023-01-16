@@ -5,18 +5,26 @@ import javax.swing.JButton;
 
 public class CgridbagListenerEngine implements ActionListener {
 	CgridbagListener parent;
+	private String s1, s2;
+	private double d1, d2;
 	CgridbagListenerEngine(CgridbagListener parent) {
 		this.parent = parent;
 	}
 	public void actionPerformed(ActionEvent e) {
+		// get button sign
 		JButton clickButton = (JButton) e.getSource();
-		String fieldText = parent.getDisplayValue1();
-		String buttonLabel = clickButton.getText();
-		buttonLabel = buttonLabel.replaceAll("\\s", "");
-		// add text within button to existing FieldText
-		String vset = fieldText + buttonLabel;
-		parent.setDisplayValue1(vset);
-		System.out.println("recent:"+fieldText+" click:"+buttonLabel+"="+ vset);
+		String buttonL = clickButton.getText();
+		String buttonT = buttonL.replaceAll("\\s", "");
+		if(buttonT.equals("add")) {
+			s1 = parent.getDisplayValue1();
+			d1 = Double.parseDouble(s1);
+			parent.setDislayValue1("");
+		} else if (buttonT.equals("=")) {
+			s2 = parent.getDisplayValue1();
+			d2 = Double.parseDouble(s2);
+			double a = d1 + d2;
+			String
+		}
 	}
 
 }

@@ -3,54 +3,77 @@ import java.awt.*;
 import javax.swing.*;
 
 public class CgridbagListener {
-   JFrame frame;
-   JPanel windowContent;
+   private JFrame frame;
    CgridKeysPanelL keys;
-   CgridbagPanelFieldS field;
-   CgridbagListenerEngine gridbagEngine;
+   JButton button;
+   CgridbagListener engine;
+   JTextField field;
    
    void createAndShowGUI(String str) {
-	   frame = new JFrame(str);
-	   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	   frame.setContentPane(windowContent);
-	   frame.pack();
-	   frame.setLocationRelativeTo(null);
-	   frame.setVisible(true);
+		 // create and set up the window.
+		 frame = new JFrame(str);
+		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 // set up the content pane.
+		 addComponentsToPane(frame.getContentPane());
+		 //display the window.
+		 frame.pack();
+		 frame.setLocationRelativeTo(null);
+		 frame.setVisible(true);
+   }
+   void addComponentsToPane(Container pane) {
+	   pane.setLayout(new GridBagLayout());
+	   CgridbagListenerEngine engine = new CgridbagListenerEngine(this);
+	   GridBagConstraints c = new GridBagConstraints();
+	   c.fill = GridBagConstraints.HORIZONTAL;
+	   c.weightx = 0.5;
+	   
+	   button = new JButton(" + ");
+	   c.gridx = 0;
+	   c.gridy = 0;
+	   c.insets = new Insets(3,3,3,3);
+	   button.addActionListener(engine);
+	   pane.add(button, c);
+	   
+	   button = new JButton(" - ");
+	   c.gridx = 1;
+	   c.gridy = 0;
+	   c.insets = new Insets(3,3,3,3);
+	   button.addActionListener(engine);
+	   pane.add(button, c);
+	   
+	   button = new JButton(" = ");
+	   c.ipady = 30;
+	   c.gridx = 2;
+	   c.gridy = 0;
+	   c.insets = new Insets(3,3,3,3);
+	   button.addActionListener(engine);
+	   pane.add(button, c);
+	   c.ipady = 0;
+	   
+	   field = new JTextField("");
+	   c.gridx = 0;
+	   c.gridy = 1;
+	   c.gridwidth = 3;
+	   pane.add(field, c);
+	   
+	   keys = new CgridKeysPanelL(engine);
+	   c.gridx = 0;
+	   c.gridy = 2;
+	   c.gridwidth = 3;
+	   pane.add(keys, c);
    }
    String getDisplayValue1() {
-	   String fieldValue = CgridbagPanelFieldS.getFieldValue();
+	   String fieldValue = field.getText();
 	   return fieldValue;
    }
-   void setDisplayValue1(String value) {
-	   CgridbagPanelFieldS.setFieldValue(value);
+   void setDislayValue1(String value) {
+	   field.setText(value);
    }
    CgridbagListener() {
-	   System.out.println("CgridbagListener Calc HomeWork");
-	   windowContent = new JPanel();
-	   GridBagLayout gb = new GridBagLayout();
-	   windowContent.setLayout(gb);
-	   GridBagConstraints constr = new GridBagConstraints();
-	   // constr.fill =  constr.BOTH;// horiz&verti
-	   constr.fill = GridBagConstraints.HORIZONTAL;
-	   constr.weightx = 1.0;// proportion of horizontal space
-	   constr.weighty = 1.0;// proportion of vertical space
-	   // prepare set of constraints for displayField
-	   constr.gridx = 0; // x number(coordinate) of the cell
-	   constr.gridy = 0; // y coordinate of the cell
-	   constr.gridheight = 1;// the same height as height of others
-	   constr.gridwidth = 6; // is wide as 6 others
-	   constr.anchor = constr.CENTER; // position within the cell
-	   field = new CgridbagPanelFieldS();
-	   windowContent.add(field);
-	   
-	   gridbagEngine = new CgridbagListenerEngine(this);
-	   keys = new CgridKeysPanelL(gridbagEngine);
-	   
-	   windowContent.add(keys);
-	   
-	   javax.swing.SwingUtilities.invokeLater(new Runnable() {
+	   System.out.println("HomeWork");
+	   SwingUtilities.invokeLater(new Runnable() {
 		   public void run() {
-			   createAndShowGUI("CgridbagListener Homework CgridbagPanelField");
+			   createAndShowGUI("HomeWork");
 		   }
 	   });
    }
