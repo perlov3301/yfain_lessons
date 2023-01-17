@@ -11,6 +11,12 @@ java -cp . Hello.java Alexander
 Or delete package name from head of main file and
 javac Hello.java-> java Hello
 
+#password of your current Wi-Fi network on Windows 11, 
+open the Settings app and go to 
+Network & Internet > Advanced Network Settings > 
+More Network Adapter Options. 
+Right-click your Wi-Fi network adapter, then navigate to 
+Status > Wireless Properties > Security : 0527277225
 
 Windows IP Configuration
 
