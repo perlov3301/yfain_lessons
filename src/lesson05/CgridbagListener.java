@@ -2,26 +2,37 @@ package lesson05;
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 public class CgridbagListener {
-   private JFrame frame;
+   JFrame frame;
    CgridKeysPanelL keys;
    JButton button;
    CgridbagListener engine;
    JTextField field;
-   CswingAdapt mw;
+   CgridbagListener() {
+	   System.out.println("HomeWork");
+	   //frame.addWindowListener(new Cadaptor());
+	   SwingUtilities.invokeLater(new Runnable() {
+		   public void run() {
+			   createAndShowGUI("HomeWork");
+		   }
+	   });
+   }
    
    void createAndShowGUI(String str) {
 		 // create and set up the window.
 		 frame = new JFrame(str);
-		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		 // set up the content pane.
 		 addComponentsToPane(frame.getContentPane());
 		 //display the window.
 		 frame.pack();
 		 frame.setLocationRelativeTo(null);
 		 frame.setVisible(true);
+		 Cadaptor adaptor = new Cadaptor(this);
+		 frame.addWindowListener(adaptor);
+		 //frame.addWindowListener(new CwindowListener(this));
    }
    void addComponentsToPane(Container pane) {
 	   pane.setLayout(new GridBagLayout());
@@ -72,14 +83,5 @@ public class CgridbagListener {
    void setDislayValue1(String value) {
 	   field.setText(value);
    }
-   CgridbagListener() {
-	   System.out.println("HomeWork");
-	   mw = new CswingAdapt();
-	   this.addWindowListener(mw);
-	   SwingUtilities.invokeLater(new Runnable() {
-		   public void run() {
-			   createAndShowGUI("HomeWork");
-		   }
-	   });
-   }
+
 }
