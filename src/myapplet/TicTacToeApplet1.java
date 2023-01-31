@@ -69,7 +69,7 @@ private void initComponents() {
    }
 private void setPlayerName(String playerName) {
 	this.playerName = playerName;
-	playerNumber.setText(playerName + ", your turn. ");t
+	playerNumber.setText(playerName + ", your turn. ");
 }
 private void reset() {
 	button1.setText("");

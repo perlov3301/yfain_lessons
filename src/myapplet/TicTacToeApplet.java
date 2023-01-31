@@ -81,7 +81,7 @@ private void initComponents() {
 }
 private void setPlayerName(String playerName) {
 	this.playerName = playerName;
-	playerNumber.setText(playerName + ", your turn. ");t
+	playerNumber.setText(playerName + ", your turn. ");
 }
 private void reset() {
 	button1.setText("");
@@ -133,14 +133,14 @@ public void mouseEntered(MouseEvent e) {}
 @Override
 public void mouseExited(MouseEvent e) {}
   private boolean findThreeInRow() {
-	  if ((button1.getText() == button2.getText() && button2.getText()==button3.getText()) ||
-		  (button4.getText() == button5.getText() && button5.getText()==button6.getText()) ||
-		  (button7.getText() == button8.getText() && button8.getText()==button9.getText()) ||
-		  (button1.getText() == button4.getText() && button4.getText()==button7.getText()) ||
-		  (button2.getText() == button5.getText() && button5.getText()==button8.getText()) ||
-		  (button3.getText() == button6.getText() && button6.getText()==button9.getText()) ||
-		  (button1.getText() == button5.getText() && button5.getText()==button9.getText()) ||
-		  (button3.getText() == button5.getText() && button5.getText()==button7.getText()) 
+	  if ((button1.getText() == button2.getText() && button2.getText()==button3.getText()&& button1.getText()!="") ||
+		  (button4.getText() == button5.getText() && button5.getText()==button6.getText()&& button1.getText()!="") ||
+		  (button7.getText() == button8.getText() && button8.getText()==button9.getText()&& button1.getText()!="") ||
+		  (button1.getText() == button4.getText() && button4.getText()==button7.getText()&& button1.getText()!="") ||
+		  (button2.getText() == button5.getText() && button5.getText()==button8.getText()&& button1.getText()!="") ||
+		  (button3.getText() == button6.getText() && button6.getText()==button9.getText()&& button1.getText()!="") ||
+		  (button1.getText() == button5.getText() && button5.getText()==button9.getText()&& button1.getText()!="") ||
+		  (button3.getText() == button5.getText() && button5.getText()==button7.getText()&& button1.getText()!="") 
 		  ) {
 		  return true;
 	  } else {
