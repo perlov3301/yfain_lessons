@@ -86,3 +86,31 @@ Ethernet adapter Bluetooth Network Connection:
    
    Fix swing package:
    https://www.youtube.com/watch?v=GBzwSf8bEdQ
+   
+   **Tomcat7 Server in Eclipse
+   *Download and unzip Apache Tomcat from https://tomcat.apache.org
+   *In Eclipse, go to Java EE perspective, select the menu 
+   =File-New-Other-Server-Server Apache-Tomcat v7 Server;
+   *select Tomcat installation directory and press Finish.
+   *Go to menu  =Windows-Show View 
+   *and open the Servers view.Start Tomcat using the right-click menu.
+   *Double-click on the Tomcat entry, select the radio button
+  = "Use Tomcat Installation".This tells Eclipse to deploy your classs
+  in the original Tomcat directories and not in internal Eclipse directories.
+  *Change the content of the Deploy path field from "wtpwebapps" to "webapps"
+   Press Ctr-S to save changes.We just want to use the original Tomcat deploy path.
+   Tomcat deploys Java Programs under webapps ; 
+   Eclipse by default deploys Java Programs under wtpwebapps.
+   
+ ** with jdk 1.8
+ * Copy HelloWorld.html to tomcat/webapps/Root
+   open http://localhost:8080/HelloWorld.html
+ * Copy TicTacToe.html and the bin directory from Eclipse
+   workspace to tomcat/webapps/Root;
+   open http://localhost:8080/TicTacToe.html
+   
+   40734467caf9f0dd33917255780c96a66010c233554b831838436258eb7b9256dc26611c44558ddaba7967d5b0ffe82c24ef44bab0ac0be14bbe08a6c6f6e785
+   40734467caf9f0dd33917255780c96a66010c233554b831838436258eb7b9256dc26611c44558ddaba7967d5b0ffe82c24ef44bab0ac0be14bbe08a6c6f6e785
+    *apache-tomcat-9.0.71-windows-x64.zip
+   
+   
