@@ -13,12 +13,18 @@ public class Lesson06 {
       } catch(IOException e) {
     	  System.out.println("Lesson06: CIOException not works");
       }
+      
       try {
     	  new CcustomerList();
       }catch(IOException e) {
     	  e.getMessage();
       }
-
+      
+      try {
+		new CustomerList();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 	}
 
 }

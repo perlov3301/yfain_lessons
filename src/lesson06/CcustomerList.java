@@ -3,6 +3,7 @@ package lesson06;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +17,7 @@ public class CcustomerList {
 	InputStream myIntputStream = null;
 	FileInputStream input;
 	CcustomerList() throws IOException{
-		System.out.println("CcustomerList");
+		System.out.println("CcustomerList1");
 		try {
 			getAllCustomers();
 		} catch (IOException e) {
@@ -43,10 +44,25 @@ public class CcustomerList {
 				}
 			}
 		}
-		 //try with resources
-//		try(myIntputStream = new FileInputStream(myfile)){
-//			
-//		}
+		// try with resources
+		try(FileOutputStream fos  = new FileOutputStream(myfile)){
+			String text = "Hello World";
+			byte arr[] = text.getBytes();
+			// text written in the file
+			fos.write(arr);
+		} catch(Exception e) {
+			System.out.println(e);
+		} // resources are closed
+		try(FileInputStream af = new FileInputStream(myfile)){
+			int ch;
+			System.out.print("FileInputStream as resources: ");
+			while((ch=af.read()) !=-1) {
+				System.out.print((char)ch);
+			}
+			System.out.println("");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}// resources are closed
 	}
    void readAll() throws IOException{
 	   System.out.print("FileInputStream: ");
