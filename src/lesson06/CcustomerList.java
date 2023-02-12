@@ -1,6 +1,5 @@
 package lesson06;
 
-import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,14 +9,13 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class CcustomerList {
-	File myfile = new File(
-"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson06\\fileCustomer.txt");;
+	File myfile = MyFile.filetext();
 	FileReader file;
 	Scanner sc;
 	InputStream myIntputStream = null;
 	FileInputStream input;
 	CcustomerList() throws IOException{
-		System.out.println("CcustomerList1");
+		System.out.println("CcustomerList");
 		try {
 			getAllCustomers();
 		} catch (IOException e) {

@@ -6,12 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class CustomerList {
-	File myfile = new File(
-			"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson06\\fileCustomer.txt");;
+	File myfile = MyFile.filetext();
 	FileReader file;
 	FileInputStream input;
 	CustomerList() throws Exception{
-		System.out.println("CustomerLIst");
+		System.out.println("CustomerList");
 	// cause throws declaration we have to handle it
 		try(FileInputStream fis = new FileInputStream(myfile)) {
 			getAllCustomers(fis);
@@ -27,6 +26,7 @@ public class CustomerList {
 		  while((ch=f.read()) !=-1) {
 				System.out.print((char)ch);
 			}
+		  System.out.println("");
 	  }catch (IOException e) {
 		throw new Exception("CustomerList is not available " +
 	  e.getMessage());

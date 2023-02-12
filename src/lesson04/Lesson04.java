@@ -17,7 +17,7 @@ public class Lesson04 extends JFrame  {
         csc.mcalculator();
 //        new Cgrid();
 //        new CgridKeys();
-//        new CborderDemoContainer();
+        new CborderDemoContainer();
 //        new CborderCalc();
 //        new CborderCalcDemo();
 //        new CcardJavapoint();

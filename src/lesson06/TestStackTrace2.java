@@ -6,7 +6,7 @@ public class TestStackTrace2 {
 	   try {
 		   divideByZero();
 		   } catch (ArithmeticException e) {
-			   System.out.println("don't divide by zero");
+			   System.out.println("Dear Friend, don't divide by zero");
 		   }
 	   }
    int divideByZero() {

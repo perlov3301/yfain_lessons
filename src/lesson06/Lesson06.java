@@ -22,9 +22,10 @@ public class Lesson06 {
       
       try {
 		new CustomerList();
-	} catch (Exception e) {
+	  } catch (Exception e) {
 		e.printStackTrace();
-	}
+	  }
+      new CmultyRethrow();
 	}
 
 }

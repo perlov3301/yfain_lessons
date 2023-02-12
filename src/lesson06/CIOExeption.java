@@ -23,16 +23,15 @@ public class CIOExeption {
 	List<String> lines;
 	CIOExeption() throws IOException{
 		System.out.println("CIOExecption ");
+		System.out.println("textfile " + MyFile.filetext());
 		try {
-			myfile = new File(
-	"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson06\\fileCustomer.txt");
+			myfile = MyFile.filetext();
 			System.out.print("good FileReader: ");
 			file = new FileReader(myfile);
 			int i;
 			while((i = file.read()) != -1) {
 				System.out.print((char)i);
 			}
-			//file.read();
 			System.out.println("");
 			System.out.print("BufferedReader: ");
 			file = new FileReader(myfile);
@@ -56,8 +55,7 @@ public class CIOExeption {
             
             System.out.println("");
 			System.out.print("List with Iterator: ");
-			Path path1 = Paths.get(
-					"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson06\\fileCustomer.txt");
+			Path path1 = Paths.get(MyFile.filestring());
             lines = Collections.emptyList();
             lines = Files.readAllLines(path1, StandardCharsets.UTF_8);
             //List l = lines;
