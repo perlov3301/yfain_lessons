@@ -138,6 +138,12 @@ public class CgridbagListener {
    void setDislayValueQ(String value) {
 	   fieldquantity.setText(value);
    }
+   void setLabelMAdded() {
+	   labelM.setText("added");
+   }
+   void setLabelQAdded() {
+	   labelQ.setText("added");
+   }
    CgridbagListener() {
 	   System.out.println("HomeWork");
 	   SwingUtilities.invokeLater(new Runnable() {

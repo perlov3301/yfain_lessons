@@ -5,9 +5,10 @@ import javax.swing.JButton;
 
 public class CgridbagListenerEngine implements ActionListener {
 	CgridbagListener parent;
-	private String s1, s2;
-	private double d1, d2;
-	private int sign = -1;
+	private String sM, sQ;
+	private int iQ=0;
+	private int signM = -1;
+	private int signQ = -1;
 	CgridbagListenerEngine(CgridbagListener parent) {
 		this.parent = parent;
 	}
@@ -15,32 +16,33 @@ public class CgridbagListenerEngine implements ActionListener {
 		// get button sign
 		JButton clickButton = (JButton) e.getSource();
 		String buttonL = clickButton.getText();
+		buttonL = buttonL.toLowerCase();
 		String buttonT = buttonL.replaceAll("\\s", "");
-		if(buttonT.equals("add model")) {
-			sign = 1;
-			s1 = parent.getDisplayValueM();
-			d1 = Double.parseDouble(s1);
-			parent.setDislayValueM("");
+		if(buttonT.equals("model1") 
+		 | buttonT.equals("model2")
+		 | buttonT.equals("model3")) {
+			parent.setDislayValueM(buttonT);
+			signM =1;
 		} else 
-			if(buttonT.equals("-")) {
-			sign = 0;
-			s1 = parent.getDisplayValue1();
-			d1 = Double.parseDouble(s1);
-			parent.setDislayValue1("");
+			if(buttonT.equals("resetmodel")) {
+			signM = 0;
+			parent.setDislayValueM("");
+			parent.labelM.setText("waiting");
 		} else
-			if (buttonT.equals("=")) {
-			s2 = parent.getDisplayValue1();
-			d2 = Double.parseDouble(s2);
-			double a;
-			if (sign>0) { a = d1 + d2;}
-			else {a = d1 - d2;}
-			String s = String.valueOf(a);
-			parent.setDislayValue1(s);
-		} else {
-			String fieldT = parent.getDisplayValue1();
-			String vset = fieldT + buttonT;
-			parent.setDislayValue1(vset);
-		}
+			if (buttonT.equals("resetquantity")) {
+			parent.setDislayValueQ("");
+			parent.labelQ.setText("waiting");
+			signQ = 0;
+		} else 
+		    if (buttonT.equals("addmodel")){
+			sM = parent.getDisplayValueM();
+			parent.labelM.setText("added");;
+		} else
+			if (buttonT.equals("addquantity")) {
+				sQ = parent.getDisplayValueQ();
+				iQ = Integer.parseInt(sQ);
+				if (iQ>0) {parent.labelQ.setText("added");}
+			}
 	}
 
 }
