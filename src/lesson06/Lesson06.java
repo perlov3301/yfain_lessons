@@ -25,7 +25,8 @@ public class Lesson06 {
 	  } catch (Exception e) {
 		e.printStackTrace();
 	  }
-      new CmultyRethrow();
+      //new CmultyRethrow();
+      new CgridbagListener();
 	}
 
 }

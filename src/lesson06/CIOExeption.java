@@ -23,7 +23,7 @@ public class CIOExeption {
 	List<String> lines;
 	CIOExeption() throws IOException{
 		System.out.println("CIOExecption ");
-		System.out.println("textfile " + MyFile.filetext());
+//		System.out.println("textfile " + MyFile.filetext());
 		try {
 			myfile = MyFile.filetext();
 			System.out.print("good FileReader: ");
