@@ -1,4 +1,5 @@
 package lesson06;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -27,20 +28,33 @@ public class CgridbagListenerEngine implements ActionListener {
 			if(buttonT.equals("resetmodel")) {
 			signM = 0;
 			parent.setDislayValueM("");
+			parent.labelM.setForeground(Color.YELLOW);
 			parent.labelM.setText("waiting");
 		} else
 			if (buttonT.equals("resetquantity")) {
 			parent.setDislayValueQ("");
+			parent.labelQ.setForeground(Color.YELLOW);
 			parent.labelQ.setText("waiting");
 			signQ = 0;
 		} else 
 		    if (buttonT.equals("addmodel")){
 			sM = parent.getDisplayValueM();
+			parent.labelM.setForeground(Color.GREEN);
 			parent.labelM.setText("added");;
 		} else
 			if (buttonT.equals("addquantity")) {
 				sQ = parent.getDisplayValueQ();
-				iQ = Integer.parseInt(sQ);
+				try {
+					iQ = Integer.parseInt(sQ);
+					parent.labelQ.setForeground(Color.GREEN);
+					//parent.labelQ.setText("added");
+				} catch (NumberFormatException ne) {
+					System.out.println("CgridbagListenerEngine: " + ne.getMessage());
+					ne.getMessage();
+					parent.labelInfo.setForeground(Color.RED);
+					parent.labelInfo.setText("correct please");
+					parent.fieldInfo.setText("Quantity must be a Number");
+				}
 				if (iQ>0) {parent.labelQ.setText("added");}
 			}
 	}

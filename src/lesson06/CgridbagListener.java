@@ -9,10 +9,12 @@ public class CgridbagListener {
    CgridbagListener engine;
    JTextField fieldmodel;
    JTextField fieldquantity;
+   JTextField fieldInfo;
    JLabel labelP;
    JLabel labelM;
    JLabel labelQ;
-   Insets ins = new Insets(3,8,3,8);
+   JLabel labelInfo;
+   Insets ins = new Insets(4,8,4,8);
    
    void createAndShowGUI(String str) {
 		 // create and set up the window.
@@ -63,6 +65,7 @@ public class CgridbagListener {
 	   pane.add(button, c);
 	   
 	   labelM = new JLabel("waiting");
+	   //labelM.setForeground(Color.yellow);
 	   c.gridx = 0;
 	   c.gridy = 1;
        pane.add(labelM,c);	
@@ -117,6 +120,21 @@ public class CgridbagListener {
 	   c.insets = ins;
 	   button.addActionListener(engine);
 	   pane.add(button, c);
+	   
+	   labelInfo= new JLabel("no Notices");
+	   //labelInfo.setForeground(Color.yellow);
+	   c.gridx = 0;
+	   c.gridy = 3;
+	   c.gridwidth = 2;
+	   c.insets = ins;
+       pane.add(labelInfo,c);	
+       
+       fieldInfo = new JTextField("Notice from saler");
+	   c.gridx = 2;
+	   c.gridy = 3;
+	   c.gridwidth = 5;
+	   c.insets = ins;
+	   pane.add(fieldInfo, c);
 	   
 //	   keys = new CgridKeysPanelL(engine);
 //	   c.gridx = 0;
