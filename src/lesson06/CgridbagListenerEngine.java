@@ -13,6 +13,16 @@ public class CgridbagListenerEngine implements ActionListener {
 	CgridbagListenerEngine(CgridbagListener parent) {
 		this.parent = parent;
 	}
+	private void setMok() {
+		parent.labelM.setForeground(Color.black);
+		parent.labelM.setText("awaiting");
+		parent.fieldInfo.setText("there is no Notice");
+	}
+	private void setQok() {
+		parent.labelQ.setForeground(Color.black);
+		parent.labelQ.setText("awaiting");
+		parent.fieldInfo.setText("there is no Notice");
+	}
 	public void actionPerformed(ActionEvent e) {
 		// get button sign
 		JButton clickButton = (JButton) e.getSource();
@@ -28,34 +38,52 @@ public class CgridbagListenerEngine implements ActionListener {
 			if(buttonT.equals("resetmodel")) {
 			signM = 0;
 			parent.setDislayValueM("");
-			parent.labelM.setForeground(Color.YELLOW);
-			parent.labelM.setText("waiting");
+//			parent.labelM.setForeground(Color.black);
+//			parent.labelM.setText("awaiting");
+			setMok();
 		} else
 			if (buttonT.equals("resetquantity")) {
 			parent.setDislayValueQ("");
-			parent.labelQ.setForeground(Color.YELLOW);
-			parent.labelQ.setText("waiting");
+//			parent.labelQ.setForeground(Color.black);
+//			parent.labelQ.setText("awaiting");
+			setQok();
 			signQ = 0;
 		} else 
 		    if (buttonT.equals("addmodel")){
 			sM = parent.getDisplayValueM();
-			parent.labelM.setForeground(Color.GREEN);
-			parent.labelM.setText("added");;
+			String sMm = sM.replaceAll("\\s", "");
+			if (sMm.equals("") | sMm.equals(null)) {
+				parent.labelM.setForeground(Color.RED);
+				parent.labelM.setText("see Notice");
+				parent.fieldInfo.setText("fill the Field for Model,please");
+			} else {
+				setMok();
+				parent.labelM.setForeground(Color.GREEN);
+				parent.labelM.setText("added");;
+			}
+			
 		} else
 			if (buttonT.equals("addquantity")) {
 				sQ = parent.getDisplayValueQ();
 				try {
 					iQ = Integer.parseInt(sQ);
-					parent.labelQ.setForeground(Color.GREEN);
-					//parent.labelQ.setText("added");
+					if (iQ>0) {
+						setQok();
+						parent.labelQ.setForeground(Color.GREEN);
+						parent.labelQ.setText("added");
+					} else {
+						parent.labelQ.setForeground(Color.RED);
+						parent.labelQ.setText("see Notice");
+						parent.fieldInfo.setText("Quantity must be biger than 0");
+					}
 				} catch (NumberFormatException ne) {
 					System.out.println("CgridbagListenerEngine: " + ne.getMessage());
 					ne.getMessage();
-					parent.labelInfo.setForeground(Color.RED);
-					parent.labelInfo.setText("correct please");
+					parent.labelQ.setForeground(Color.RED);
+					parent.labelQ.setText("see Notice");
 					parent.fieldInfo.setText("Quantity must be a Number");
 				}
-				if (iQ>0) {parent.labelQ.setText("added");}
+			
 			}
 	}
 

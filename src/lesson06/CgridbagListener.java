@@ -64,10 +64,11 @@ public class CgridbagListener {
 	   button.addActionListener(engine);
 	   pane.add(button, c);
 	   
-	   labelM = new JLabel("waiting");
+	   labelM = new JLabel("awaiting");
 	   //labelM.setForeground(Color.yellow);
 	   c.gridx = 0;
 	   c.gridy = 1;
+//	   c.gridwidth=2;
        pane.add(labelM,c);	
        
 	   fieldmodel = new JTextField("");
@@ -93,7 +94,7 @@ public class CgridbagListener {
 	   button.addActionListener(engine);
 	   pane.add(button, c);
 	   
-	   labelQ = new JLabel("waiting");
+	   labelQ = new JLabel("awaiting");
 	   c.gridx = 0;
 	   c.gridy = 2;
        pane.add(labelQ,c);	
@@ -121,7 +122,7 @@ public class CgridbagListener {
 	   button.addActionListener(engine);
 	   pane.add(button, c);
 	   
-	   labelInfo= new JLabel("no Notices");
+	   labelInfo= new JLabel("Notice         ");
 	   //labelInfo.setForeground(Color.yellow);
 	   c.gridx = 0;
 	   c.gridy = 3;
@@ -129,7 +130,7 @@ public class CgridbagListener {
 	   c.insets = ins;
        pane.add(labelInfo,c);	
        
-       fieldInfo = new JTextField("Notice from saler");
+       fieldInfo = new JTextField("there is no Notice");
 	   c.gridx = 2;
 	   c.gridy = 3;
 	   c.gridwidth = 5;
