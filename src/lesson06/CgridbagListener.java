@@ -35,7 +35,7 @@ public class CgridbagListener {
 	   c.fill = GridBagConstraints.HORIZONTAL;
 	  // c.weightx = 1;
 // Insets(int top, int left, int bottom, int right)
-	  labelP = new JLabel("place the Order");
+	   JLabel labelP = new JLabel("place the Order");
 	   c.gridx = 2;
 	   c.gridy = 0;
 	   c.gridwidth=2;
@@ -67,7 +67,7 @@ public class CgridbagListener {
 	   c.insets = ins;
        pane.add(labelM,c);	
        
-	   fieldmodel = new JTextField("                       ");
+	   fieldmodel = new JTextField("");
 	   c.gridx =2;
 	   c.gridy = 1;
 	   c.gridwidth = 2;
@@ -99,7 +99,7 @@ public class CgridbagListener {
 	   c.gridwidth=2;
        pane.add(labelQ,c);	
        
-	   fieldquantity = new JTextField("                       ");
+	   fieldquantity = new JTextField("");
 	   c.gridx = 2;
 	   c.gridy = 2;
 	   c.gridwidth = 2;
