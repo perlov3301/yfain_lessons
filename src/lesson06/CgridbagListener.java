@@ -35,7 +35,7 @@ public class CgridbagListener {
 	   c.fill = GridBagConstraints.HORIZONTAL;
 	  // c.weightx = 1;
 // Insets(int top, int left, int bottom, int right)
-	   JLabel labelP = new JLabel("place the Order");
+	   labelP = new JLabel("place the Order");
 	   c.gridx = 2;
 	   c.gridy = 0;
 	   c.gridwidth=2;

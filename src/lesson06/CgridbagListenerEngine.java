@@ -5,14 +5,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 public class CgridbagListenerEngine implements ActionListener {
-	CgridbagListener parent;
-	private String sM, sQ;
-	private int iQ=0;
-	private int signM = -1;
-	private int signQ = -1;
+	private CgridbagListener parent;
 	private String sModel;
-	private String sTrim;
 	private int iQuantity;
+	
+	CgridbagListenerEngine(CgridbagListener parent) {
+		this.parent = parent;
+	}
 	String getModel() {
 		return sModel;
 	}
@@ -48,9 +47,7 @@ public class CgridbagListenerEngine implements ActionListener {
 		}
 		return sb.toString();
 	}
-	CgridbagListenerEngine(CgridbagListener parent) {
-		this.parent = parent;
-	}
+	
 	private void setMok() {
 		parent.labelM.setForeground(Color.black);
 		parent.labelM.setText("awaiting");
@@ -68,13 +65,18 @@ public class CgridbagListenerEngine implements ActionListener {
 		parent.labelP.setText("place the Order");
 	}
 	
-	
 	public void actionPerformed(ActionEvent e) {
 		// get button sign
 		JButton clickButton = (JButton) e.getSource();
 		String buttonL = clickButton.getText();
 		buttonL = buttonL.toLowerCase();
 		String buttonT = buttonL.replaceAll("\\s", "");
+		String sM;
+		String sQ;
+		int iQ=0;
+		int signM = -1;
+		int signQ = -1;
+		String sTrim;
 		
 		if(buttonT.equals("order")) {
 			if(signM==1 && signQ==1) {
