@@ -8,6 +8,8 @@ public class CgridbagListenerEngine implements ActionListener {
 	private CgridbagListener parent;
 	private String sModel;
 	private int iQuantity;
+	int signM = -1;
+	int signQ = -1;
 	
 	CgridbagListenerEngine(CgridbagListener parent) {
 		this.parent = parent;
@@ -74,8 +76,7 @@ public class CgridbagListenerEngine implements ActionListener {
 		String sM;
 		String sQ;
 		int iQ=0;
-		int signM = -1;
-		int signQ = -1;
+		
 		String sTrim;
 		
 		if(buttonT.equals("order")) {
@@ -88,6 +89,8 @@ public class CgridbagListenerEngine implements ActionListener {
 				parent.labelP.setText("see the Notice");
 			} else if(signQ!= 1) {
 				parent.fieldInfo.setText("add quantity of Bikes, please");
+				parent.labelP.setForeground(Color.red);
+				parent.labelP.setText("see Notice");
 			}
 		} else 
 			if (buttonT.equals("resetorder")) {
@@ -136,7 +139,9 @@ public class CgridbagListenerEngine implements ActionListener {
 				try {
 					iQ = Integer.parseInt(sTrim);
 					if (iQ>0) {
-						//setQok();
+						setQok();
+						setOok();
+						parent.fieldquantity.setText(sTrim);
 						parent.labelQ.setForeground(Color.GREEN);
 						parent.labelQ.setText("added");
 						iQuantity = iQ;
