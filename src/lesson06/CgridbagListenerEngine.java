@@ -8,6 +8,8 @@ public class CgridbagListenerEngine implements ActionListener {
 	private CgridbagListener parent;
 	private String sModel;
 	private int iQuantity;
+	int signM = -6;
+	int signQ = -2;
 	
 	CgridbagListenerEngine(CgridbagListener parent) {
 		this.parent = parent;
@@ -28,10 +30,14 @@ public class CgridbagListenerEngine implements ActionListener {
 	}
 	private static String trimZeroBegin(final String s) {
 		final StringBuilder sb = new StringBuilder(s);
-		while (sb.length()> 0 && sb.substring(0,1)=="0") {
+		while 
+			//(sb.length()> 0 && sb.substring(0,1)=="0") 
+			(sb.length()> 0 && sb.charAt(0)=='0')
+			{
 			sb.deleteCharAt(0);
 		}
-		return sb.toString();
+		String s1= sb.toString();
+		return s1;
 	}
 	private static String trimBegin(final String s) {
 		final StringBuilder sb = new StringBuilder(s);
@@ -71,23 +77,31 @@ public class CgridbagListenerEngine implements ActionListener {
 		String buttonL = clickButton.getText();
 		buttonL = buttonL.toLowerCase();
 		String buttonT = buttonL.replaceAll("\\s", "");
-		String sM;
+		String sM,sMm;
 		String sQ;
 		int iQ=0;
-		int signM = -1;
-		int signQ = -1;
+//		int signM = -6;
+//		int signQ = -2;
 		String sTrim;
+		String sNeto;
 		
 		if(buttonT.equals("order")) {
 			if(signM==1 && signQ==1) {
 				parent.labelP.setForeground(Color.green);
 				parent.labelP.setText("Order was placed");
+				try {
+					CbikeOrder.validateOrder(sModel, iQuantity);
+				} catch(CcustomException ev) {
+					txtResult.setText(ev.getMessage());
+				}
 			}else if(signM!= 1) {
-				parent.fieldInfo.setText("add Name of Model,please");
+				parent.fieldInfo.setText("add model,please");
 				parent.labelP.setForeground(Color.red);
 				parent.labelP.setText("see the Notice");
 			} else if(signQ!= 1) {
-				parent.fieldInfo.setText("add quantity of Bikes, please");
+				parent.fieldInfo.setText("add quantity, please");
+				parent.labelP.setForeground(Color.red);
+				parent.labelP.setText("see the Notice");
 			}
 		} else 
 			if (buttonT.equals("resetorder")) {
@@ -102,6 +116,7 @@ public class CgridbagListenerEngine implements ActionListener {
 			signM = -1;
 			parent.setDislayValueM("");
 			setMok();
+			setOok();
 		} else
 			if (buttonT.equals("resetquantity")) {
 			parent.setDislayValueQ("");
@@ -111,13 +126,13 @@ public class CgridbagListenerEngine implements ActionListener {
 		} else 
 		    if (buttonT.equals("addmodel")){
 			sM = parent.getDisplayValueM();
-			String sMm = sM.replaceAll("\\s", "");
-			//String sMm = sM.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
+			sMm = sM.replaceAll("\\s", "");
+			//sMm = sM.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
 			sTrim = trimBoth(sM);
 			if (sMm.equals(null) | sMm.isEmpty()) {
 				parent.labelM.setForeground(Color.RED);
 				parent.labelM.setText("see Notice");
-				parent.fieldInfo.setText("fill the Field for Model,please");
+				parent.fieldInfo.setText("fill the Field for add model,please");
 				signM= -1;
 			} else {
 			    setMok();//s.replaceAll("^\\s+", "").replaceAll("\\s+$", "")
@@ -132,15 +147,18 @@ public class CgridbagListenerEngine implements ActionListener {
 			if (buttonT.equals("addquantity")) {
 				sQ = parent.getDisplayValueQ();
 				sTrim = trimBoth(sQ);
-				sTrim = trimZeroBegin(sTrim);
+				sNeto = trimZeroBegin(sTrim);
 				try {
-					iQ = Integer.parseInt(sTrim);
+					iQ = Integer.parseInt(sNeto);
 					if (iQ>0) {
-						//setQok();
+						setQok();
+						setOok();
 						parent.labelQ.setForeground(Color.GREEN);
 						parent.labelQ.setText("added");
+						parent.fieldquantity.setText(sNeto);
 						iQuantity = iQ;
 						signQ=1;
+						
 					} else {
 						parent.labelQ.setForeground(Color.RED);
 						parent.labelQ.setText("see Notice");
@@ -148,7 +166,6 @@ public class CgridbagListenerEngine implements ActionListener {
 						signQ=0;
 					}
 				} catch (NumberFormatException ne) {
-					//System.out.println("CgridbagListenerEngine: " + ne.getMessage().toString());
 					//ne.printStackTrace();
 					parent.labelQ.setForeground(Color.RED);
 					parent.labelQ.setText("see Notice");

@@ -6,12 +6,12 @@ public class CgridbagListener {
    private JFrame frame;
    CgridKeysPanelL keys;
    JButton button;
-   CgridbagListener engine;
+   CgridbagListenerEngine engine;
    JTextField fieldmodel;
    JTextField fieldquantity;
-   JTextField fieldInfo;
+   static JTextField fieldInfo;
    JLabel label;
-   JLabel labelP;
+   static JLabel labelP;
    JLabel labelM;
    JLabel labelQ;
    JLabel labelInfo;
@@ -30,7 +30,7 @@ public class CgridbagListener {
    }
    void addComponentsToPane(Container pane) {
 	   pane.setLayout(new GridBagLayout());
-	   CgridbagListenerEngine engine = new CgridbagListenerEngine(this);
+	   engine = new CgridbagListenerEngine(this);
 	   GridBagConstraints c = new GridBagConstraints();
 	   c.fill = GridBagConstraints.HORIZONTAL;
 	  // c.weightx = 1;
@@ -158,6 +158,18 @@ public class CgridbagListener {
    }
    void setLabelQAdded() {
 	   labelQ.setText("added");
+   }
+   static void setLabelP(String s) {
+	   try {
+		    labelP.setForeground(Color.red);
+		    labelP.setText(s);
+			labelP.setText("see Notice");
+			fieldInfo.setText(s);
+			System.out.println("too many Bikes");
+	   } catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
    }
    CgridbagListener() {
 	   System.out.println("HomeWork");

@@ -13,15 +13,6 @@ public class ShippingErrorInfo
 	String messageQuantity = "Too many Bikes";
    ShippingErrorInfo(){
 	   System.out.println("ShippingErrorInfo");
-	   CgridbagListener instance = new CgridbagListener();
-	   try {
-		  l = instance.labelP;
-		  l.setForeground(Color.red);
-		  l.setText("see Notice");
-		  f= instance.fieldInfo;
-		  f.setText("");
-	   } catch (Exception e) {
-		   
-	   }
+	   CgridbagListener.setLabelP(messageQuantity);
    }
 }
