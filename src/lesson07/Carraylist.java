@@ -5,6 +5,7 @@ import java.util.*;
 public class Carraylist {
    Carraylist(){
 	   // default number of memebers is 10
+	   // ArrayList<Customer> customers = new ArrayList<>(10);
 	   ArrayList customers = new ArrayList();
 	   // instances of Customer object
 	   Customer cust1 = new Customer("David", "Lee");
@@ -14,7 +15,7 @@ public class Carraylist {
 	   // = Customer instances to ArrayList
 	   customers.add(cust1);
 	   customers.add(cust2);
-	   customers.add(ord);
+	   //customers.add(ord);
 	   
 	   int totalElem = customers.size();
 	   System.out.print("Carraylist; customers: ");
