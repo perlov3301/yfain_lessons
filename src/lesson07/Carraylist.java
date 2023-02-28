@@ -32,7 +32,7 @@ public class Carraylist {
 		  }
 		   
 	   }
-	   
+	   System.out.println("");
 	   
    }
 }
