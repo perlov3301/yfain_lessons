@@ -8,6 +8,7 @@ public class Lesson07 {
 		new Citerator();
 		new Clinkedlist();
 		new Cgeneric();
+		new Cparamclasses();
 	}
 
 }
