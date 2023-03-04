@@ -11,7 +11,7 @@ public class Lesson06 {
       try {
     	  new CIOExeption();
       } catch(IOException e) {
-    	  System.out.println("Lesson06: CIOException not works");
+    	  System.out.println("Lesson06: CIOException don't work");
       }
       
       try {
