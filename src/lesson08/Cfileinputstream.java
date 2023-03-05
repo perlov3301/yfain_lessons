@@ -9,7 +9,7 @@ public class Cfileinputstream {
   Cfileinputstream() throws IOException{
 	  System.out.println("Cfileinputstream");
 	  file1 = MyFile.filetext();
-	  System.out.print("untitled1.txt:");
+	  System.out.println("untitled1.txt:");
 	  try {
 		  myFile = new FileInputStream(file1);
 		  boolean eof = false;
@@ -32,5 +32,6 @@ public class Cfileinputstream {
 			  }
 		  }
 	  }
+	  System.out.println("");
   }
 }
