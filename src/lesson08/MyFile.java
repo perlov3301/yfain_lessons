@@ -6,11 +6,17 @@ import java.io.IOException;
 public class MyFile {
    static File filetext() throws IOException {
 	  File a =  new File(
-				"C:\\Users\\perlovshlomoalexande\\git\\yfain_lessons\\src\\lesson08\\Untitled1.txt");
+				"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson08\\Untitled1.txt");
 	return a;
    }
    static String filestring () {
 	   return 
-	"C:\\Users\\perlovshlomoalexande\\git\\yfain_lessons\\src\\lesson08\\Untitled1.txt";
+	"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson08\\Untitled1.txt";
    }
+   static File file2() throws IOException {
+		  File a =  new File(
+					"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson08\\untitled2.txt");
+		return a;
+	   }
+   
 }

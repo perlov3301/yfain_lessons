@@ -8,6 +8,8 @@ public class Lesson08 {
        System.out.println("lesson08");
        new Cfileinputstream();
        new CconvertorTest();
+       new Cfileoutputstream();
+       new Cbufferedinputstream();
 	}
 
 }
