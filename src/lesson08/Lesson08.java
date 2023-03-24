@@ -10,6 +10,15 @@ public class Lesson08 {
        new CconvertorTest();
        new Cfileoutputstream();
        new Cbufferedinputstream();
+       new Cinputstreamreader();
+       new Cstringbuffer();
+       new Coutputstreamwriter();
+       new Cbufferedwriter();
+       new Ctrywithresources();
+       new TestBufferedInputStream();
+       new TaxGuiFile();
+       // new TaxGuiWithR();
+       
 	}
 
 }

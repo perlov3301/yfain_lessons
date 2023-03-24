@@ -5,11 +5,11 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class CustomerList {
+public class CustomerTrywithresources {
 	File myfile = MyFile.filetext();
 	FileReader file;
 	FileInputStream input;
-	CustomerList() throws Exception{
+	CustomerTrywithresources() throws Exception{
 		System.out.println("CustomerList");
 	// cause throws declaration we have to handle it
 		try(FileInputStream fis = new FileInputStream(myfile)) {

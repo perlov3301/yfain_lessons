@@ -21,7 +21,7 @@ public class Lesson06 {
       }
       
       try {
-		new CustomerList();
+		new CustomerTrywithresources();
 	  } catch (Exception e) {
 		e.printStackTrace();
 	  }

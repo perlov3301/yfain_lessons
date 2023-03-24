@@ -18,5 +18,20 @@ public class MyFile {
 					"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson08\\untitled2.txt");
 		return a;
 	   }
+   static File filewrite () {
+	   return new File(
+				"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson08\\untitled2.txt"
+              );
+   }
+   static File filewriter1 () {
+	   return new File (
+			"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson08\\untitled3.txt"
+			   );
+   }
+   static File filestates () {
+	   return new File (
+	"C:\\Users\\perlo\\git\\yfain_lessons\\src\\lesson08\\states.txt"
+			   );
+   }
    
 }

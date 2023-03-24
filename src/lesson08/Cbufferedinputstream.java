@@ -22,7 +22,11 @@ public class Cbufferedinputstream {
 			boolean eof = false;
 			while (!eof) {
 				int byteValue = buff.read();
-				System.out.print(byteValue + " ");
+				String s = Cconvertor.getC(byteValue);
+				if (s==null) {
+					s="\n";
+				}
+				System.out.print(s + " ");
 				if (byteValue == -1) {
 					eof = true;
 				}
