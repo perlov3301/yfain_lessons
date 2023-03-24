@@ -37,6 +37,7 @@ public class TaxGuiFile extends JFrame
   
   TaxGuiFile(){
 	  lblGrIncome = new JLabel("Gross Income: ");
+	  this.setTitle("TaxGuiFile");
 	  GridLayout gr = new GridLayout(5,2,1,1);
 	  setLayout(gr);
 	  

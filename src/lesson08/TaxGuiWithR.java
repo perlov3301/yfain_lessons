@@ -21,7 +21,7 @@ public class TaxGuiWithR extends JFrame
   implements ActionListener{
    JLabel lblGrIncome;
    JTextField txtGrossIncome = new JTextField(15);
-   JLabel lblDependents = new JLabel("Number of Dependets");
+   JLabel lblDependents = new JLabel("Number of Dependents");
    JTextField txtDependents= new JTextField(2);
    JLabel lblState = new JLabel("State: ");
    // data model
@@ -38,6 +38,7 @@ public class TaxGuiWithR extends JFrame
    
    TaxGuiWithR(){
 	   lblGrIncome = new JLabel("Gross Income: ");
+	   this.setTitle("TaxGuiWithR");
 	   GridLayout gr = new GridLayout(5,2,1,1);
 	   setLayout(gr);
 	   add(lblGrIncome);
@@ -63,11 +64,12 @@ public class TaxGuiWithR extends JFrame
    private void populateStates() {
 	   states.add("Select State");
 	   File file = null;
-	   try {
-		   file = MyFile.filestates();
-	   } catch(FileNotFoundException e1) {
-		   e1.printStackTrace();
-	   }
+	   file = MyFile.filestates();
+//	   try {
+//		   file = MyFile.filestates();
+//	   } catch(FileNotFoundException e1) {
+//		   e1.printStackTrace();
+//	   }
 	   try ( FileInputStream myFile = new FileInputStream(file);
 			 InputStreamReader inputStreamReader =
 					 new InputStreamReader(myFile, "UTF8");
@@ -75,10 +77,21 @@ public class TaxGuiWithR extends JFrame
 			   ) {
 		   String nextLine;
 		   boolean eof = false;
+		   while (!eof) {
+			   nextLine = reader.readLine();
+			   if (nextLine == null) {
+				   eof = true;
+			   } else {
+				   states.add(nextLine);
+			   }
+		   }
 	   } catch (FileNotFoundException e1) {
-		   
+		   System.out.println("file not found");
+		   txtStateTax.setText("file not found");
+		   e1.printStackTrace();
 	   } catch (IOException e2) {
-		   
+		   System.out.println("IOException");
+		   txtStateTax.setText("IOException");
 	   }
    }
 @Override

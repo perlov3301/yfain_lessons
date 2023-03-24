@@ -17,7 +17,7 @@ public class Lesson08 {
        new Ctrywithresources();
        new TestBufferedInputStream();
        new TaxGuiFile();
-       // new TaxGuiWithR();
+       new TaxGuiWithR();
        
 	}
 
