@@ -9,6 +9,12 @@ public class Tax {
 		this.dependents = dep;
 		this.state = st;
 	}
+	double roundtwo(double a) {
+		double b = a*100;
+		Long c = Math.round(b);
+		b = c/100;
+		return b;
+	}
    Double calcTax(){
 	   double t = 0;
 	   if (this.state.equals("New York")) {
@@ -16,7 +22,8 @@ public class Tax {
 	   } else {
 	    t = 0.07 * this.gross -dependents*0.01*this.gross;
 	   }
-	  return t; 
+	   double t1 = roundtwo(t);
+	  return t1; 
    }
    
 }
