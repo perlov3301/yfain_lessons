@@ -115,10 +115,6 @@ private void populateStates() {
 		}
 	}
 }
-private Double roundtwo (Double a) {
-	Double b = a*100;
-	return a;
-}
 @Override
 public void actionPerformed(ActionEvent evt) {
   Object source = evt.getSource();	
