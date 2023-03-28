@@ -19,6 +19,7 @@ public class Lesson08 {
        new TaxGuiFile();
        new TaxGuiWithR();
        new CfilesNIO();
+       new ClassTax();
 	}
 
 }

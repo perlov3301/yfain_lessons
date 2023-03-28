@@ -37,7 +37,7 @@ public class CfilesNIO {
 		 e.printStackTrace();
 	 }
 	  // read file as Lines of strings
-      System.out.println("CfilesNIO; customers, escape backlash :");
+      System.out.println("CfilesNIO; customers, pairs of escape backlashes :");
      try {
     	   customers = 
     	Files.readAllLines(pathCustomers, Charset.defaultCharset());
