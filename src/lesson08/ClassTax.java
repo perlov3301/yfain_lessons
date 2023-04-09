@@ -29,6 +29,13 @@ public class ClassTax  {
 		oOut.writeObject(taxS);
 	 } catch (IOException e) {
 		 e.printStackTrace();
+	 } finally {
+		 try {
+			 oOut.close();
+			 fOut.close();
+		 } catch (Exception e) {
+			 e.printStackTrace();
+		 }
 	 }
   }
   

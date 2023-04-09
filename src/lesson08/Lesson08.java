@@ -19,7 +19,11 @@ public class Lesson08 {
        new TaxGuiFile();
        new TaxGuiWithR();
        new CfilesNIO();
+       new ClassA();
        new ClassTax();
+       new ClassB();
+       new EmpProcessorExternalizable();
+       new EmpExternalDeserialize();
 	}
 
 }
