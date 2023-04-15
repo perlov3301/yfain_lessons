@@ -24,6 +24,8 @@ public class Lesson08 {
        new ClassB();
        new EmpProcessorExternalizable();
        new EmpExternalDeserialize();
+       new CnetURL();
+       new WebSiteReader();
 	}
 
 }

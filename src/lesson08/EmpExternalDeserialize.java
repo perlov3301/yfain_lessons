@@ -35,7 +35,7 @@ public class EmpExternalDeserialize {
 			  System.out.println("the EmployeeExternalizable object" +
 		  " has been deserialized from NewEmployee2.ser");
 		  }
-	System.out.println("object newE:"+newEmp);
+	System.out.println("object newEmp:"+newEmp);
 	newEmp.getEmployee("EmpExternalDeserialize",true);
 
 	  }
