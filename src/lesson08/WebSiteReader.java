@@ -27,10 +27,11 @@ public class WebSiteReader {
 // String signature=property.get("signature").getAsString();
 // return new Property("textures", texture, signature);		 
 		 urlConn = url.openConnection();
-		 inStream = new InputStreamReader(urlConn.getInputStream(), "UTF8");
+		 inStream = new InputStreamReader(
+				 urlConn.getInputStream(), "UTF8");
 		 buff = new BufferedReader(inStream);
 		 int i =0;
-		 while (i<10) {
+		 while (i<11) {
 			 nextLine=buff.readLine();
 			 if (nextLine !=null) {
 				 System.out.println("WebSiteReader:"+nextLine);
@@ -44,6 +45,15 @@ public class WebSiteReader {
 		   
 	   } catch(IOException e1) {
 		   System.out.println("Can't read online:"+e1.toString());
-	   } 
+	   } finally {
+		   if (inStream != null) {
+			   try {
+				   inStream.close();
+				   buff.close();
+			   } catch (IOException e1) {
+				   System.out.println("can't close stream"+e1.getMessage());
+			   }
+		   }
+	   }
    }
 }
