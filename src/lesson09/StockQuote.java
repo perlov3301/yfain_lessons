@@ -25,15 +25,12 @@ public class StockQuote {
 		buff = new BufferedReader(inStream);
 		//get the quote as a csv string
 		csvString = buff.readLine();
+		csvString = buff.readLine();
+
 		//parse the csv string
 		StringTokenizer tokenizer = new 
 				StringTokenizer(csvString, ",");
-		/**
-		String ticker = tokenizer.nextToken();
-		String price =  tokenizer.nextToken();
-		String tradeDate = tokenizer.nextToken();
-		String tradeTime = tokenizer.nextToken();
-		*/
+	
 		String tradeDate = tokenizer.nextToken();
 		String tradeOpen = tokenizer.nextToken();
 		String tradeHigh = tokenizer.nextToken();
@@ -41,27 +38,21 @@ public class StockQuote {
 		String tradeClose = tokenizer.nextToken();
 		String tradeAdjClose = tokenizer.nextToken();
 		String tradeVolume = tokenizer.nextToken();
-		//if (tokenizer.nextToken()!=null) {System.out.println("next:" + tokenizer.nextToken());}
-		System.out.println("Symbol: " + symbol + 
-			" Price: " + tradeAdjClose + " Date: " + tradeDate);
-		csvString = buff.readLine();
-		//parse the csv string
-		tokenizer = new 
-				StringTokenizer(csvString, ",");
-		tradeDate = tokenizer.nextToken();
-		tradeOpen = tokenizer.nextToken();
-		tradeHigh = tokenizer.nextToken();
-		tradeLow =  tokenizer.nextToken();
-		tradeClose = tokenizer.nextToken();
-		tradeAdjClose = tokenizer.nextToken();
-		tradeVolume = tokenizer.nextToken();
-		System.out.println("Symbol: " + symbol + 
-			" Price: " + tradeAdjClose + " Date: " + tradeDate);
+		System.out.println("symbol:" + symbol);
+		System.out.println(" Price(Adj Close): " + tradeAdjClose + " Date: " + tradeDate);
+		
 	} catch(MalformedURLException e) {
 		System.out.println("Please check the spelling of the URL: " +
 	      e.toString());
 	} catch(IOException e1) {
 		System.out.println("Can't read online:" + e1.toString());
+	} finally {
+        try {
+    		inStream.close();
+    		buff.close();
+        } catch(Exception e) {
+        	System.out.println("can't close streams: "+e.getMessage());
+        }
 	}
   }
   StockQuote(){
